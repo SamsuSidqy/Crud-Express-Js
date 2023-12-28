@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Halaman Home</title>
+</head>
+<body>
+
+		<ul>		  
+		  <% data.forEach(row => { %>
+		  		<form action="/update/" method="POST">
+		  			<input type="hidden" required name="id" value="<%= row.id%>">
+		  			<input type="text" value="<%= row.nama %>" required name="nama">
+		  			<br><br>
+		  			<button type="submit">Update</button>
+		  		</form><br>
+		  		<li> <%= row.id%> | <%= row.nama %></li>
+		  <%}) %>
+		</ul>
+
+</body>
+</html>
